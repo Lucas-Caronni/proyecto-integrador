@@ -274,3 +274,73 @@ img{
     height: 300px;
     width: 300px; 
 }
+/* Home page */
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: calc(20% - 20px); /* Calcula el ancho para que haya 5 productos en una fila */
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h3 {
+    margin-top: 0;
+}
+
+.product p {
+    margin-bottom: 10px;
+}
+
+.add-to-cart-btn,
+.view-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.add-to-cart-btn:hover,
+.view-more-btn:hover {
+    background-color: #555;
+}
+
+/*foto backround*/
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(""); /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
+    background-size:contain;
+    background-position: center;
+    z-index: -1; /* Asegura que esté detrás del contenido */
+}
