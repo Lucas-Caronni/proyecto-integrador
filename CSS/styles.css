@@ -253,6 +253,8 @@ footer {
     padding: 20px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    width: 500px;
 }
 
 .product img {
@@ -260,4 +262,15 @@ footer {
     height: auto;
     margin-bottom: 10px;
 }
-<!-- pagina home -->
+img{
+    height:fit-content;
+    width:fit-content;
+}
+.nashe{
+    height: 350px;
+    width: 350px; 
+}
+.nashei{
+    height: 300px;
+    width: 300px; 
+}
