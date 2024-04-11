@@ -333,14 +333,67 @@ img{
 
 /*foto backround*/
 
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(""); /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
-    background-size:contain;
-    background-position: center;
-    z-index: -1; /* Asegura que esté detrás del contenido */
+img{width: 100%;
+height: 90vh;
+object-fit:cover ;}
+
+.clothing-title{
+    background-color: rgb(178, 1, 1); 
+    padding: 10px 20px; 
+    border-radius: 10px;
+color: white;
+text-align: center;
 }
+
+.accessories-title{ background-color: rgb(178, 1, 1); 
+    padding: 10px 20px; 
+    border-radius: 10px;
+color: white;
+text-align: center;}
+
+.electronics-title{ background-color: rgb(178, 1, 1); 
+    padding: 10px 20px; 
+    border-radius: 10px;
+color: white;
+text-align: center;}
+
+.products{display: flex;flex-wrap: wrap; justify-content: space-between;}
+
+.product {
+    width: calc(20% - 20px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product img {
+    width: 100%;
+    height: 50%;
+    display:block;
+}
+.product-info {
+    padding: 10px; 
+    text-align: center; 
+}
+
+.add-to-cart-btn,
+.view-more-btn {
+    display:inline-flex;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.add-to-cart-btn:hover,
+.view-more-btn:hover {
+    background-color: #555;
+}
+
+/* fin de la home page */
