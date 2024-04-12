@@ -1,50 +1,5 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-.name{
-    font-family: "Domine", serif;
-    font-optical-sizing:auto;
-    font-weight: 800;
-    font: size 150px;;
-    font-style:normal
-}
+/*inicio category*/
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-header {
-    background-color: #ad8ad2;
-    color: #fff;
-    padding: 20px 0;
-}
-
-
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.5s ease;
-}
-
-nav ul li a:hover {
-    color: #5d00ff; 
-}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -59,117 +14,8 @@ header {
     padding: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-   
-    
-    
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li:last-child {
-    margin-right: 0;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ffd700;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.tit{
-    color: black;
-}
-
-.product {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.product img {
-    max-width: 800px;
-    height: 500px;
-    border-radius: 5px;
-}
-
-.product h2 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.product p {
-    margin-bottom: 10px;
-}
-
-.product button {
-    background-color: #f4f4f4;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.product button:hover {
-    background-color: #555;
-}
-
-footer {
-    background-color: darkred;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    position: static;
-    bottom: 0;
-    width: 100%;
-    
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    
-}
-
-header {
-    background-color: #9b0000;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   
-    
-    
-}
+    align-items: center;  
+    }
 
 .logo {
     font-size: 24px;
@@ -297,7 +143,7 @@ img{
 }
 
 .product {
-    width: calc(20% - 20px); /* Calcula el ancho para que haya 5 productos en una fila */
+    width: calc(20% - 20px); 
     margin-right: 20px;
     margin-bottom: 20px;
     background-color: #fff;
@@ -410,5 +256,57 @@ text-align: center;}
     text-align: center;
     background-color: #9b0000;
 }
+/*inicio prod*/
+.containerx {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-/* fin de la home page */
+.tit {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.productf {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.productf img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.productf h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.productf p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.productf button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.productf button:hover {
+    background-color: #555;
+}
