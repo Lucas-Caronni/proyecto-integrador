@@ -54,7 +54,7 @@ body {
 }
 
 header {
-    background-color: darkred;
+    background-color: #9b0000;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -160,7 +160,7 @@ body {
 }
 
 header {
-    background-color: darkred;
+    background-color: #9b0000;
     color: #fff;
     padding: 20px;
     display: flex;
@@ -202,7 +202,7 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: darkred;
+    background-color: #9b0000;
     color: #fff;
     text-align: center;
     padding: 15px;
@@ -241,6 +241,9 @@ footer {
     color: #ffd700;
 }
 
+.messi{
+    display: flex; flex-wrap: wrap;justify-content: space-between;
+}
 .products {
     padding: 20px;
     display: grid;
@@ -248,31 +251,34 @@ footer {
     gap: 20px;
 }
 
-.product {
+.productp {
+    width: calc(20% - 20px);
+    margin-bottom: 20px;
     background-color: #fff;
+    border: 1px solid #ddd;
     padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 500px;
-    width: 500px;
+    box-sizing: border-box;
 }
+
 
 .product img {
     max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    height: 50%;
+    display: block;
 }
 img{
     height:fit-content;
     width:fit-content;
 }
 .nashe{
-    height: 350px;
-    width: 350px; 
+   width: 100%;
+   height: 50%;
+   display: block;
 }
 .nashei{
-    height: 300px;
-    width: 300px; 
+    width: 100%;
+    height: 50%;
+    display: block;
 }
 /* Home page */
 
@@ -338,20 +344,20 @@ height: 95vh;
 object-fit:cover;}
 
 .clothing-title{
-    background-color: rgb(178, 1, 1); 
+    background-color: #9b0000; 
     padding: 10px 20px; 
     border-radius: 10px;
 color: white;
 text-align: center;
 }
 
-.accessories-title{ background-color: rgb(178, 1, 1); 
+.accessories-title{ background-color:#9b0000; 
     padding: 10px 20px; 
     border-radius: 10px;
 color: white;
 text-align: center;}
 
-.electronics-title{ background-color: rgb(178, 1, 1); 
+.electronics-title{ background-color: #9b0000; 
     padding: 10px 20px; 
     border-radius: 10px;
 color: white;
@@ -402,7 +408,7 @@ text-align: center;}
     width: 100%;
     padding: 20px 0;
     text-align: center;
-    background-color: rgb(165, 1, 1);
+    background-color: #9b0000;
 }
 
 /* fin de la home page */
