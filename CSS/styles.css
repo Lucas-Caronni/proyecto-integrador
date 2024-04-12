@@ -311,10 +311,56 @@ text-align: center;}
     background-color: #555;
 }
 
+/*inicio cart*/
+
+
+/*inicio log in*/
 
 
 
+.login-container {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-/* Media Queries tamano pantalla*/
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.links {
+    margin-top: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
