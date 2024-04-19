@@ -567,3 +567,9 @@ text-align: center;}
     bottom: 0;
     width: 100%;
 }
+
+@media (max-width:420px){
+    .header{}
+}
+
+ 
