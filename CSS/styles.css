@@ -336,8 +336,9 @@ text-align: center;}
 
 .cart-item img {
     width: 100px;
-    height: auto;
-    display: block;
+    height:auto;
+    display:flex;
+    flex-wrap: wrap;
     margin: 0 auto 10px;
 }
 
@@ -568,8 +569,52 @@ text-align: center;}
     width: 100%;
 }
 
-@media (max-width:420px){
-    .header{}
-}
 
- 
+/*responsive*/
+
+@media (max-width: 420px) {
+    header {
+        /* Puedes ajustar el padding, el tamaño del texto o el espacio entre elementos del encabezado */
+        padding: 20px;
+    }
+
+    .logo {
+        /* Puedes ajustar el tamaño del texto o el margen */
+        font-size: 10px;
+    }
+
+    nav ul li {
+        /* Puedes ajustar el margen entre los elementos de la barra de navegación */
+        margin-right: 10px;
+    }
+
+    .navbar {
+        /* Puedes ajustar el padding o el tamaño del texto de los enlaces de navegación */
+        padding: 10px 0;
+    }
+
+    .products {
+        /* Puedes ajustar la disposición de los productos para que se muestren en una sola columna */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product {
+        /* Puedes ajustar el ancho y el margen de los productos para que se muestren en una sola columna */
+        width: calc(100% - 20px);
+        margin: 0 10px 20px;
+    }
+
+    .product img {
+        /* Puedes ajustar el tamaño de las imágenes para que se adapten mejor a pantallas pequeñas */
+        width: 100%;
+        height: auto;
+    }
+    img logo{
+        width: 100%;
+        height:min-content;
+    }
+
+    /* Puedes continuar ajustando otros estilos según sea necesario para que la página se vea bien en dispositivos móviles */
+}
