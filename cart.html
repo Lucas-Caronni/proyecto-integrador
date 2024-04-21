@@ -14,14 +14,20 @@
     <header>
         <div class="logo">BULLATOR</div>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="category.html">CLOTHING</a></li>
                 <li><a href="category.html">ELECTRONIC DEVICES</a></li>
                 <li><a href="category.html">ACCESSORIES</a></li>
                 <li><a href="cart.html">SHOPPING BAG</a></li>
             </ul>
+            <div class="menu-icon"></div>
         </nav>
+        <script> 
+            document.querySelector('.menu-icon').addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.toggle('show');
+            });
+        </script>
     </header>
 
     <section class="cart">
