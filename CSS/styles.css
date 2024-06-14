@@ -128,60 +128,64 @@ img{
 }
 /* Home page */
 
-.category {
-    margin-bottom: 40px;
-}
-
-.category h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
+/* Estilos para los productos */
 .products {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px; /* Espacio entre productos */
+    justify-content: space-between; /* Distribuir productos uniformemente */
 }
 
 .product {
-    width: calc(20% - 20px); 
-    margin-right: 20px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
+    width: calc(30% - 10px); /* Ancho del producto (tres productos por fila) */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde del producto */
+    padding: 10px; /* Espaciado interno reducido */
+    box-sizing: border-box; /* Incluir el borde en el cálculo del ancho */
+    text-align: center; /* Centrar texto */
 }
 
 .product img {
-    width: 100%;
-    height: auto;
+    max-width: 100%; /* Imagen ocupa todo el ancho disponible del contenedor */
+    height: 60%; /* Altura automática para mantener la proporción */
+    display: block; /* Eliminar espacio adicional debajo de la imagen */
+    border-radius: 8px; /* Borde redondeado para las imágenes */
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+.product-info {
+    display:contents; /* Usar flexbox para alinear contenido */
+    flex-direction: column; /* Dirección de columna para alinear elementos verticalmente */
+    justify-content: space-between; /* Distribuir elementos uniformemente verticalmente */
+    height: 100%; /* Altura completa del contenedor */
 }
 
 .product h3 {
-    margin-top: 0;
+    margin-top: 0; /* Eliminar margen superior */
+    font-size: 16px; /* Tamaño de fuente reducido para el título */
 }
 
 .product p {
-    margin-bottom: 10px;
+    margin-bottom: 8px; /* Espacio debajo de los párrafos reducido */
+    font-size: 14px; /* Tamaño de fuente para el texto */
+    line-height: 1.4; /* Espaciado entre líneas */
 }
 
-.add-to-cart-btn,
-.view-more-btn {
+.product .view-more-btn {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
+    background-color: #9b0000; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    padding: 6px 12px; /* Espaciado interno del botón reducido */
+    border-radius: 4px; /* Borde redondeado del botón */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    margin-top: 8px; /* Espacio encima del botón reducido */
 }
 
-.add-to-cart-btn:hover,
-.view-more-btn:hover {
-    background-color: #555;
+.product .view-more-btn:hover {
+    background-color: #7a0000; /* Color de fondo del botón al pasar el ratón */
 }
+
+
 
 /*foto backround*/
 
@@ -189,64 +193,6 @@ img{width: 100%;
 height:95vh;
 object-fit:cover;}
 
-.clothing-title{
-    background-color: #9b0000; 
-    padding: 10px 20px; 
-    border-radius: 10px;
-color: white;
-text-align: center;
-}
-
-.accessories-title{ background-color:#9b0000; 
-    padding: 10px 20px; 
-    border-radius: 10px;
-color: white;
-text-align: center;}
-
-.electronics-title{ background-color: #9b0000; 
-    padding: 10px 20px; 
-    border-radius: 10px;
-color: white;
-text-align: center;}
-
-.products{display: flex;flex-wrap: wrap; justify-content: space-between;}
-
-.product {
-    width: calc(20% - 20px);
-    margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.product img {
-    width: 100%;
-    height: 50%;
-    display:block;
-}
-.product-info {
-    padding: 10px; 
-    text-align: center; 
-}
-
-.add-to-cart-btn,
-.view-more-btn {
-    display:inline-flex;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
-
-.add-to-cart-btn:hover,
-.view-more-btn:hover {
-    background-color: #555;
-}
 
 .add-to-category-btn {
     display:inline-flex;
