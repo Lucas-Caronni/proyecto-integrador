@@ -248,6 +248,18 @@ text-align: center;}
     background-color: #555;
 }
 
+.add-to-category-btn {
+    display:inline-flex;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
 
 /*inicio prod*/
 .containerx {
