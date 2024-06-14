@@ -10,150 +10,50 @@
     <title>BULLATOR</title>
 </head>
 <body>
-
     <header>
         <div class="logo">BULLATOR</div>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="category.html">CLOTHING</a></li>
-                <li><a href="category.html">ELECTRONIC DEVICES</a></li>
-                <li><a href="category.html">ACCESSORIES</a></li>
+                <li><a href="category.html?category=men's clothing">MEN</a></li>
+                <li><a href="category.html?category=women's clothing">WOMEN</a></li>
+                <li><a href="category.html?category=electronics">ELECTRONIC DEVICES</a></li>
+                <li><a href="category.html?category=jewelery">ACCESSORIES</a></li>
                 <li><a href="cart.html">SHOPPING BAG</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="register.html">REGISTER</a></li>
             </ul>
-            <div class="menu-icon"></div>
+            <div class="menu-icon" aria-label="Toggle navigation"></div>
         </nav>
-        <script> 
-            document.querySelector('.menu-icon').addEventListener('click', function() {
-                document.querySelector('.nav-links').classList.toggle('show');
-            });
-        </script>
     </header>
 
-   <img src="img/logo.png">
-
-    <section class="category clothing">
-        <h2 class="clothing-title">Clothing</h2>
-        <div class="products">
-            <article class="product">
-                <img src="img/nudetee.png" alt="Producto 1">
-                <h3>Nude Tee</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="producto.html" class="view-more-btn">View More</a>
-            </article>
-            <article class="product">
-                <img src="img/nudesport.png" alt="Producto 1">
-                <h3>Sport</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article>
-            <article class="product">
-                <img src="img/nudepant.png" alt="Producto 1">
-                <h3>Pant</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article>
-            <div class="product">
-                <img src="img/nudejack.png" alt="Producto 1">
-                <h3>Jack</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article>
-         
-    </section>
-
-    <section class="category accessories">
-        <h2 class="accessories-title">Accessories</h2>
-        <div class="products">
-            <article class="product">
-                <img src="img/mochi.png" alt="Producto 2">
-                <h3>Mochila</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article>
-            <article class="product">
-                <img src="img/bag.png" alt="Producto 2">
-                <h3>Nude Bag</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article>
-            <article class="product">
-                <img src="img/gorra.png" alt="Producto 2">
-                <h3>Gorra Nude</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article>
-            <article class="product">
-                <img src="img/collar.png" alt="Producto 2">
-                <h3>Collar</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article>
-        </div>
-    </section>
-
-    <section class="category electronics">
-        <h2 class="electronics-title">Electronics</h2>
-        <div class="products">
-            <article class="product">
-                <img src="img/visionpro.png" alt="Producto 3">
-                <h3>Apple vision pro</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article>
-            <article class="product">
-                <img src="img/watch.png" alt="Producto 3">
-                <h3>Apple Watch</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article>
-            <article class="product">
-                <img src="img/iphone.png" alt="Producto 3">
-                <h3>Iphone 15</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article> 
-            <article class="product">
-                <img src="img/airpodmax.png" alt="Producto 3">
-                <h3>Airpods Max</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-                <a href="cart.html" class="add-to-cart-btn">Add to Shopping Bag</a>
-                <a href="#" class="view-more-btn">View More</a>
-            </article> 
-            
-        </div>
-    </section>
+    <img src="img/logo.png" alt="Logo de BULLATOR">
     
-   <footer>
-        <p>&copy; 2024 BULLATOR. All rights reserved.</p>
-        <p>Lucas Caronni    Carlos Vela</p>
+    <section id="electronics" class="category">
+        <h2>Electronics</h2>
+        <div class="products"></div>
+    </section>
+
+    <section id="jewelery" class="category">
+        <h2>Accessories</h2>
+        <div class="products"></div>
+    </section>
+
+    <section id="mens-clothing" class="category">
+        <h2>Men's Clothing</h2>
+        <div class="products"></div>
+    </section>
+
+    <section id="womens-clothing" class="category">
+        <h2>Women's Clothing</h2>
+        <div class="products"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BULLATOR. Todos los derechos reservados.</p>
+        <p>Lucas Caronni & Carlos Vela</p>
     </footer>
-  
+
+    <script src="js/index.js"></script>
 </body>
 </html>
-
-
-
