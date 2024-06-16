@@ -1,29 +1,46 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const category = urlParams.get('category');
+function getQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+        category: params.get('category') || 'all'
+    };
+}
+async function loadProducts() {
+    const { category } = getQueryParams();
+    const productsContainer = document.getElementById('category-products');
 
-    if (category) {
-        fetch(`https://fakestoreapi.com/products/category/${category}`)
-            .then(res => res.json())
-            .then(products => {
-                const productsContainer = document.querySelector('.products-list');
+    const apiUrl = category === 'all'
+        ? 'https://fakestoreapi.com/products'
+        : `https://fakestoreapi.com/products/category/${encodeURIComponent(category)}`;
 
-                products.forEach(product => {
-                    const productArticle = document.createElement('article');
-                    productArticle.classList.add('product');
+    try {
+        const response = await fetch(apiUrl);
+        const products = await response.json();
 
-                    productArticle.innerHTML = `
-                        <img src="${product.image}" alt="${product.title}">
-                        <h3>${product.title}</h3>
-                        <p>${product.description}</p>
-                        <p>Price: $${product.price}</p>
-                        <a href="product-detail.html?id=${product.id}" class="view-more-btn">View More</a>
-                    `;
+        productsContainer.innerHTML = '';
 
-                    productsContainer.appendChild(productArticle);
-                });
-            })
-            .catch(error => console.error('Error fetching products:', error));
+        if (products.length === 0) {
+            productsContainer.innerHTML = '<p>No hay productos en esta categoría.</p>';
+            return;
+        }
+
+        products.forEach(product => {
+            const productElement = document.createElement('article');
+            productElement.classList.add('product');
+
+            productElement.innerHTML = `
+                <img src="${product.image}" alt="${product.title}">
+                <h3>${product.title}</h3>
+                <p>${product.description}</p>
+                <p>Precio: $${product.price}</p>
+                <a href="product.html?id=${product.id}" class="view-more-btn">Ver Más</a>
+            `;
+
+            productsContainer.appendChild(productElement);
+        });
+    } catch (error) {
+        console.error('Error loading products:', error);
+        productsContainer.innerHTML = '<p>Error al cargar los productos. Por favor, intenta de nuevo más tarde.</p>';
     }
-});
+}
+
+window.onload = loadProducts;
