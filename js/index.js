@@ -10,35 +10,44 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para obtener productos de la API
     function fetchProducts() {
         fetch('https://fakestoreapi.com/products')
-            .then(response => response.json())
-            .then(data => {
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
                 displayProducts(data);
             })
-            .catch(error => console.error('Error fetching products:', error));
+            .catch(function(error) {
+                console.log('Error fetching products:', error);
+            })
     }
 
-    // Función para mostrar productos en la página
+    // Función para mostrar productos de la api en la página 
     function displayProducts(products) {
-        Object.keys(categories).forEach(category => {
-            const section = document.getElementById(categories[category]);
-            const productsContainer = section.querySelector('.products');
-            const filteredProducts = products.filter(product => product.category === category);
+        for (let category in categories) {
+            if (categories.hasOwnProperty(category)) {
+                const section = document.getElementById(categories[category]);
+                const productsContainer = section.querySelector('.products');
+                const filteredProducts = products.filter(function(product) {
+                    return product.category === category;
+                });
 
-            filteredProducts.forEach(product => {
-                const productElement = document.createElement('article');
-                productElement.className = 'product';
-                productElement.innerHTML = `
-                    <img src="${product.image}" alt="${product.title}">
-                    <h3>${product.title}</h3>
-                    <p>${product.description}</p>
-                    <p>Precio: $${product.price}</p>
-                    <a href="producto.html?id=${product.id}" class="view-more-btn">Ver Más</a>
-                `;
-                productsContainer.appendChild(productElement);
-            });
-        });
+                for (let i = 0; i < filteredProducts.length; i++) {
+                    const product = filteredProducts[i];
+                    const productElement = document.createElement('article');
+                    productElement.className = 'product';
+                    productElement.innerHTML = `
+                        <img src="${product.image}" alt="${product.title}">
+                        <h3>${product.title}</h3>
+                        <p>${product.description}</p>
+                        <p>Price: $${product.price}</p>
+                        <a href="producto.html?id=${product.id}" class="view-more-btn">Ver Más</a>
+                    `;
+                    productsContainer.appendChild(productElement);
+                }
+            }
+        }
     }
 
-    // Llamada a la función para obtener y mostrar los productos
+    // línea del código que empieza todo el proceso de obtener y mostrar los productos.
     fetchProducts();
 });
