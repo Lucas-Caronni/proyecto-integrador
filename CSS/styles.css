@@ -146,11 +146,12 @@ img{
 }
 
 .product img {
-    max-width: 100%; /* Imagen ocupa todo el ancho disponible del contenedor */
-    height: 60%; /* Altura automática para mantener la proporción */
+    max-width: 300px; /* Imagen ocupa todo el ancho disponible del contenedor */
+    height: 200px; /* Altura automática para mantener la proporción */
     display: block; /* Eliminar espacio adicional debajo de la imagen */
     border-radius: 8px; /* Borde redondeado para las imágenes */
     margin-bottom: 10px; /* Espacio debajo de la imagen */
+    object-fit: contain;
 }
 
 .product-info {
@@ -208,58 +209,50 @@ object-fit:cover;}
 
 
 /*inicio prod*/
-.containerx {
-    max-width: 800px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#product-details {
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
-.tit {
-    text-align: center;
-    font-size: 24px;
+#product-details h1 {
+    margin-bottom: 20px;
     color: #333;
+}
+
+#product-details img {
+    width: 500px;
+    height: 400px;
+    object-fit: contain;
+}
+
+#product-details p {
     margin-bottom: 20px;
-}
-
-.productf {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.productf img {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.productf h2 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.productf p {
-    font-size: 16px;
     color: #666;
-    margin-bottom: 10px;
 }
 
-.productf button {
+#product-details a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #9b0000;
+    text-decoration: none;
+}
+
+#product-details button {
     padding: 10px 20px;
-    background-color: #333;
     color: #fff;
+    background-color: #9b0000;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.productf button:hover {
-    background-color: #555;
 }
 
 /*inicio cart*/
