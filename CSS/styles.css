@@ -330,39 +330,7 @@ body {
 }
 
 /* Estilo para cada producto en el carrito */
-.product {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: #f9f9f9;
-    transition: box-shadow 0.3s;
-}
 
-.product:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.product img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.product h3 {
-    margin: 0;
-    font-size: 1.2em;
-    flex-grow: 1;
-}
-
-.product p {
-    margin: 5px 0;
-    font-size: 1em;
-    flex-grow: 1;
-}
 
 .remove-btn {
     margin-left: auto;
