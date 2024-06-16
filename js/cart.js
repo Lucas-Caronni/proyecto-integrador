@@ -1,65 +1,79 @@
+// Esperar a que el documento esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtener los ids de productos guardados en localStorage
-    const cartIds = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Elemento donde se mostrarán los productos del carrito
+    // Seleccionar el contenedor donde se mostrarán los productos del carrito
     const cartContainer = document.querySelector('.cart-container');
 
-    // Función para obtener los detalles de los productos del carrito desde la API
-    function fetchCartProducts() {
-        const promises = cartIds.map(id => {
-            return fetch(`https://fakestoreapi.com/products/${id}`)
-                .then(response => response.json());
-        });
-
-        return Promise.all(promises);
+    // Función para recuperar los productos del carrito desde el LocalStorage
+    function getCartItems() {
+        const cartItems = localStorage.getItem('cart');
+        return cartItems ? JSON.parse(cartItems) : [];
     }
 
-    // Función para mostrar los productos del carrito en la página
-    function displayCartProducts(products) {
-        // Limpiar el contenedor antes de actualizar
-        cartContainer.innerHTML = '';
+    // Función para mostrar los productos en el carrito
+    function displayCartItems() {
+        const cartItems = getCartItems();
 
-        // Verificar si el carrito está vacío
-        if (products.length === 0) {
-            cartContainer.innerHTML = '<p>Su carrito está vacío.</p>';
-            return;
+        if (cartItems.length === 0) {
+            // Si no hay productos en el carrito, mostrar mensaje
+            const emptyMessage = document.createElement('p');
+            emptyMessage.textContent = 'Su carrito está vacío';
+            cartContainer.appendChild(emptyMessage);
+        } else {
+            // Si hay productos, pedir a la API la información de cada uno y mostrarlos
+            for (let i = 0; i < cartItems.length; i++) {
+                // Obtener el ID del producto actual
+                const productId = cartItems[i];
+
+                // Obtener información del producto desde la API
+                fetchProductDetails(productId);
+            }
+
+            // Crear y mostrar el botón "Finalizar Compra"
+            const checkoutButton = document.createElement('button');
+            checkoutButton.textContent = 'Finalizar Compra';
+            checkoutButton.className = 'checkout-btn';
+            checkoutButton.addEventListener('click', checkout);
+            cartContainer.appendChild(checkoutButton);
         }
-
-        // Mostrar cada producto en el carrito
-        products.forEach(product => {
-            const productElement = document.createElement('article');
-            productElement.className = 'product';
-            productElement.innerHTML = `
-                <img src="${product.image}" alt="${product.title}">
-                <h3>${product.title}</h3>
-                <p>${product.description}</p>
-                <p>Precio: $${product.price}</p>
-            `;
-            cartContainer.appendChild(productElement);
-        });
-
-        // Agregar botón "Finalizar Compra" al final del contenedor
-        const checkoutButton = document.createElement('button');
-        checkoutButton.textContent = 'Finalizar Compra';
-        checkoutButton.classList.add('checkout-btn');
-        checkoutButton.addEventListener('click', function() {
-            // Limpiar el carrito (localStorage)
-            localStorage.removeItem('cart');
-            // Agradecer al usuario por su compra
-            alert('¡Gracias por su compra!');
-            // Redirigir a la página principal
-            window.location.href = 'index.html';
-        });
-
-        cartContainer.appendChild(checkoutButton);
     }
 
-    // Mostrar productos del carrito al cargar la página
-    fetchCartProducts()
-        .then(displayCartProducts)
-        .catch(error => {
-            console.log(error);
-            cartContainer.innerHTML = '<p>Hubo un error al cargar el carrito.</p>';
-        });
+    // Función para obtener los detalles de un producto desde la API
+    function fetchProductDetails(productId) {
+        fetch('https://fakestoreapi.com/products/' + productId)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(product) {
+                // Crear elemento para mostrar el producto en el carrito
+                const productElement = document.createElement('div');
+                productElement.className = 'product';
+                productElement.innerHTML = `
+                    <img src="${product.image}" alt="${product.title}">
+                    <h3>${product.title}</h3>
+                    <p>${product.description}</p>
+                    <p>Precio: $${product.price}</p>
+                `;
+
+                // Añadir el producto al contenedor del carrito
+                cartContainer.insertBefore(productElement, cartContainer.lastChild);
+            })
+            .catch(function(error) {
+                console.log('Error al obtener los detalles del producto:', error);
+            });
+    }
+
+    // Función para manejar el proceso de finalizar la compra
+    function checkout() {
+        // Eliminar los productos del carrito de LocalStorage
+        localStorage.removeItem('cart');
+        
+        // Agradecer al usuario por su compra
+        alert('Gracias por su compra.');
+
+        // Redirigir al usuario a la página principal
+        window.location.href = 'index.html';
+    }
+
+    // Llamar a la función para mostrar los productos del carrito al cargar la página
+    displayCartItems();
 });
