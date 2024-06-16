@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BULLATOR - Categoría</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <title>BULLATOR - Categorías</title>
 </head>
 <body>
     <header>
@@ -23,17 +23,29 @@
                 <li><a href="login.html">LOGIN</a></li>
                 <li><a href="register.html">REGISTER</a></li>
             </ul>
-            <div class="menu-icon"></div>
+            <div class="menu-icon" aria-label="Toggle navigation"></div>
         </nav>
-        <script> 
-            document.querySelector('.menu-icon').addEventListener('click', function() {
-                document.querySelector('.nav-links').classList.toggle('show');
-            });
-        </script>
     </header>
 
-    <section id="category-products" class="products">
-        
+    <!-- Secciones de categorías -->
+    <section id="mens-clothing" class="category">
+        <h2>Men's Clothing</h2>
+        <div class="products"></div>
+    </section>
+
+    <section id="womens-clothing" class="category">
+        <h2>Women's Clothing</h2>
+        <div class="products"></div>
+    </section>
+    
+    <section id="electronics" class="category">
+        <h2>Electronics</h2>
+        <div class="products"></div>
+    </section>
+
+    <section id="jewelery" class="category">
+        <h2>Accessories</h2>
+        <div class="products"></div>
     </section>
 
     <footer>

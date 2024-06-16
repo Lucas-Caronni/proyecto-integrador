@@ -7,56 +7,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
-    <title>BULLATOR - Shopping Bag</title>
+    <title>Su Carrito de Compras</title>
 </head>
 <body>
-
     <header>
         <div class="logo">BULLATOR</div>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="category.html">MEN</a></li>
-                <li><a href="category.html">WOMEN</a></li>
-                <li><a href="category.html">ELECTRONIC DEVICES</a></li>
-                <li><a href="category.html">ACCESSORIES</a></li>
+                <li><a href="category.html?category=men's clothing">MEN</a></li>
+                <li><a href="category.html?category=women's clothing">WOMEN</a></li>
+                <li><a href="category.html?category=electronics">ELECTRONIC DEVICES</a></li>
+                <li><a href="category.html?category=jewelery">ACCESSORIES</a></li>
                 <li><a href="cart.html">SHOPPING BAG</a></li>
                 <li><a href="login.html">LOGIN</a></li>
                 <li><a href="register.html">REGISTER</a></li>
-                
             </ul>
-            <div class="menu-icon"></div>
+            <div class="menu-icon" aria-label="Toggle navigation"></div>
         </nav>
-        <script> 
-            document.querySelector('.menu-icon').addEventListener('click', function() {
-                document.querySelector('.nav-links').classList.toggle('show');
-            });
-        </script>
-        </header>
+    </header>
 
-    <section class="cart">
-        <h2>Shopping Bag</h2>
-        <div class="cart-items">
-            <article class="cart-item">
-                <img src="img/nudetee.png" alt="Producto 1">
-                <h3>Nude Tee</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-            </article>
-            <article class="cart-item">
-                <img src="img/nudesport.png" alt="Producto 2">
-                <h3>Sport</h3>
-                <p>Product Description</p>
-                <p>Prize:</p>
-            </article>
-        </div>
-        <a href="#" class="buyc">Buy</a>
+    <section class="cart-container">
+        <!-- Aquí se mostrarán los productos del carrito -->
     </section>
 
-    <footer class="footerx">
-        <p>&copy; 2024 BULLATOR. All rights reserved.</p>
-        <p>Lucas Caronni | Carlos Vela</p>
+    <footer>
+        <p>&copy; 2024 BULLATOR. Todos los derechos reservados.</p>
+        <p>Lucas Caronni & Carlos Vela</p>
     </footer>
 
+    <script src="js/cart.js"></script>
 </body>
 </html>
