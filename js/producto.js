@@ -36,8 +36,13 @@ fetch(url)
             }
             cart.push(product.id);
             localStorage.setItem('cart', JSON.stringify(cart));
+            console.log("cart: ", cart)
         });
     })
     .catch(function(error) {
         console.log(error);
     });
+
+
+
+    
