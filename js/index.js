@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 displayProducts(data);
             })
             .catch(function(error) {
-                console.log('Error fetching products:', error);
+                console.log(error);
             })
     }
 
@@ -48,6 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // línea del código que empieza todo el proceso de obtener y mostrar los productos.
+    // Funcion que empieza todo el proceso de obtener y mostrar los productos
     fetchProducts();
 });
