@@ -471,31 +471,31 @@ body {
 
 /*inicio register */
 
-.register-form {
+input[type="email"], input[type="password"] {
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    height: 20px;
+}
+
+.register-form{
     max-width: 400px;
-    margin: 50px auto;
+    margin: 60px auto;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.register-form h2 {
+.register-form h2{
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input {
+.register-form input{
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -503,12 +503,13 @@ body {
     font-size: 16px;
 }
 
-.form-group input[type="checkbox"] {
-    display: inline-block;
-    width: auto;
+.register-form label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-.register-btn {
+.register-form button{
     display: block;
     width: 100%;
     padding: 10px;
@@ -520,24 +521,18 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-.register-btn:hover {
-    background-color: #700000;
-}
-
-.login-link {
+.register-form a,
+.already-have-account{
     text-align: center;
     margin-top: 10px;
-}
-
-.login-link a {
     color: #9b0000;
     text-decoration: none;
+    
 }
 
-.login-link a:hover {
-    text-decoration: underline;
-}
+
+
+
 
 /*inicio recover */
 .recover-form {
