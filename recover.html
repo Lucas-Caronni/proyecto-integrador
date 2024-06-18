@@ -16,37 +16,35 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="category.html">MEN</a></li>
-                <li><a href="category.html">WOMEN</a></li>
-                <li><a href="category.html">ELECTRONIC DEVICES</a></li>
-                <li><a href="category.html">ACCESSORIES</a></li>
+                <li><a href="category.html?category=men's clothing">MEN</a></li>
+                <li><a href="category.html?category=women's clothing">WOMEN</a></li>
+                <li><a href="category.html?category=electronics">ELECTRONIC DEVICES</a></li>
+                <li><a href="category.html?category=jewelery">ACCESSORIES</a></li>
                 <li><a href="cart.html">SHOPPING BAG</a></li>
                 <li><a href="login.html">LOGIN</a></li>
                 <li><a href="register.html">REGISTER</a></li>
-                
             </ul>
-            <div class="menu-icon"></div>
+            <div class="menu-icon" aria-label="Toggle navigation"></div>
         </nav>
-        <script> 
-            document.querySelector('.menu-icon').addEventListener('click', function() {
-                document.querySelector('.nav-links').classList.toggle('show');
-            });
-        </script>
     </header>
 
     <section class="recover-form">
-        <h2>New Password</h2>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <input type="checkbox" id="recover-checkbox" name="recover-checkbox" required>
-                <label for="recover-checkbox">Remember me</label>
-            </div>
-            <button type="submit" class="recover-btn">Continue</button>
+        <h2>Recover Password</h2>
+        <form id="recover-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <div id="email-error" class="error-message"></div>
+
+            <label for="terms">
+                <input type="checkbox" id="terms" required>
+                I want to recover my password
+            </label>
+            <div id="terms-error" class="error-message"></div>
+
+            <button type="submit" id="recover-button">Recover</button>
+            <div id="success-message" class="success-message"></div>
         </form>
+        <a href="login.html" id="login-link" style="display:none;">Go to login</a>
     </section>
 
     <footer class="footer-recover">
@@ -54,5 +52,6 @@
         <p>Lucas Caronni | Carlos Vela</p>
     </footer>
 
+<script src="js/recover.js"></script>
 </body>
 </html>
