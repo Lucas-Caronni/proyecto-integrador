@@ -1,9 +1,6 @@
-// Pasos para QS
-let qs = location.search; // Obtener la qs de la url
-let qsto = new URLSearchParams(qs); // Transformar la qs en un Objeto Literal
-let id = qsto.get('id'); // Obtener el dato de id del objeto literal. qsto = query string to object
-
-// Armar un nuevo fetch
+let qs = location.search; 
+let qsto = new URLSearchParams(qs); 
+let id = qsto.get('id'); 
 let url = 'https://fakestoreapi.com/products/' + id;
 
 fetch(url)

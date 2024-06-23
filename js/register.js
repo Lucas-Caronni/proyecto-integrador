@@ -31,12 +31,9 @@ function validateConfirmPassword() {
         return true;
     }
 }
-
-// Añade los manejadores de eventos a los campos del formulario
 document.getElementById('password').addEventListener('input', validatePassword);
 document.getElementById('confirm-password').addEventListener('input', validateConfirmPassword);
 
-// Añade el manejador de eventos al formulario
 document.getElementById('register-form').addEventListener('submit', function(event) {
     event.preventDefault();
 

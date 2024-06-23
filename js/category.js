@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtiene los parámetros de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
 
-    // Mapear categorías con las secciones correspondientes en la página
     const categoryMapping = {
         "men's clothing": 'mens-clothing',
         "women's clothing": 'womens-clothing',
@@ -11,36 +9,34 @@ document.addEventListener('DOMContentLoaded', function() {
         jewelery: 'jewelery'
     };
 
-    // Verifica si la categoría es válida
+    // Verificar si la categoría es válida
     if (!category || !categoryMapping[category]) {
         console.log('Categoría no válida o no especificada');
         return;
     }
 
-    // Oculta todas las secciones primero
+    // Ocultar todas las secciones primero
     for (let key in categoryMapping) {
         if (categoryMapping.hasOwnProperty(key)) {
             const section = document.getElementById(categoryMapping[key]);
             if (section) {
-                section.style.display = 'none'; // Ocultar la sección
+                section.style.display = 'none'; 
             }
         }
     }
-
-    // Muestra la sección correspondiente a la categoría seleccionada
     const sectionId = categoryMapping[category];
     const section = document.getElementById(sectionId);
-    
+
     // Verificar si la sección fue encontrada
     if (!section) {
         console.log(`No se encontró la sección con el ID: ${sectionId}`);
         return;
     }
 
-    section.style.display = 'block'; // Mostrar la sección seleccionada
+    section.style.display = 'block';
     const productsContainer = section.querySelector('.products');
 
-    // Verificar si el contenedor de productos fue encontrado
+    
     if (!productsContainer) {
         console.log(`No se encontró el contenedor de productos en la sección con el ID: ${sectionId}`);
         return;
@@ -60,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    // Función para mostrar los productos en la página
     function displayProducts(products) {
         // Limpiar el contenedor de productos
         productsContainer.innerHTML = '';
@@ -70,22 +65,23 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Crear y agregar elementos para cada producto
+        let productsHTML = ''; 
+
         for (let i = 0; i < products.length; i++) {
             const product = products[i];
-            const productElement = document.createElement('article');
-            productElement.className = 'product';
-            productElement.innerHTML = `
-                <img src="${product.image}" alt="${product.title}">
-                <h3>${product.title}</h3>
-                <p>${product.description}</p>
-                <p>Precio: $${product.price}</p>
-                <a href="producto.html?id=${product.id}" class="view-more-btn">Ver Más</a>
+            const productHTML = `
+                <article class="product">
+                    <img src="${product.image}" alt="${product.title}">
+                    <h3>${product.title}</h3>
+                    <p>${product.description}</p>
+                    <p>Precio: $${product.price}</p>
+                    <a href="producto.html?id=${product.id}" class="view-more-btn">Ver Más</a>
+                </article>
             `;
-            productsContainer.appendChild(productElement);
+            productsHTML += productHTML; 
         }
+        productsContainer.innerHTML = productsHTML;
     }
 
-    // Llamar a la función para obtener los productos de la categoría seleccionada
     fetchProductsByCategory(category);
 });

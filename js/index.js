@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Definición de las categorías
     const categories = {
         electronics: 'electronics',
         jewelery: 'jewelery',
@@ -18,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(function(error) {
                 console.log(error);
-            })
+            });
     }
 
-    // Función para mostrar productos de la api en la página 
+    // Función para mostrar productos de la API en la página
     function displayProducts(products) {
         for (let category in categories) {
             if (categories.hasOwnProperty(category)) {
@@ -30,24 +29,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 const filteredProducts = products.filter(function(product) {
                     return product.category === category;
                 });
+                productsContainer.innerHTML = '';
+                let productsHTML = '';
 
                 for (let i = 0; i < filteredProducts.length; i++) {
                     const product = filteredProducts[i];
-                    const productElement = document.createElement('article');
-                    productElement.className = 'product';
-                    productElement.innerHTML = `
-                        <img src="${product.image}" alt="${product.title}">
-                        <h3>${product.title}</h3>
-                        <p>${product.description}</p>
-                        <p>Price: $${product.price}</p>
-                        <a href="producto.html?id=${product.id}" class="view-more-btn">Ver Más</a>
+                    const productHTML = `
+                        <article class="product">
+                            <img src="${product.image}" alt="${product.title}">
+                            <h3>${product.title}</h3>
+                            <p>${product.description}</p>
+                            <p>Price: $${product.price}</p>
+                            <a href="producto.html?id=${product.id}" class="view-more-btn">Ver Más</a>
+                        </article>
                     `;
-                    productsContainer.appendChild(productElement);
+                    productsHTML += productHTML; 
                 }
+                productsContainer.innerHTML = productsHTML;
             }
         }
     }
-
-    // Funcion que empieza todo el proceso de obtener y mostrar los productos
     fetchProducts();
 });
